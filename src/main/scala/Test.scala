@@ -17,11 +17,7 @@ object Permitted {
       case Some(s) => s
       case None => ""
     }
-    if(check == hash) {
-      true
-    } else {
-      false
-    }
+    check == hash
   }
 }
 
