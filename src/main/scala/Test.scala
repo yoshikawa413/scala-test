@@ -13,11 +13,10 @@ object Permitted {
   val CHECK_LIST = ListMap("hogehoge" -> "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
 
   def checkSum(name: String, hash: String): Boolean = {
-    val check = CHECK_LIST.get(name) match {
-      case Some(s) => s
-      case None => ""
+    CHECK_LIST.get(name) match {
+      case Some(s) => s == hash
+      case None => false
     }
-    check == hash
   }
 }
 
