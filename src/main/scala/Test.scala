@@ -14,7 +14,7 @@ object Permitted {
 
   def checkSum(name: String, hash: String): Boolean = {
     CHECK_LIST.get(name) match {
-      case Some(s) => s == hash
+      case Some(s) => (s == hash)
       case None => false
     }
   }
